@@ -22,7 +22,7 @@ connection.once('open', () => {
     console.log("mongodb database conenction established successfully");
 });
 
-router.route('/issues').get((req, res) => {
+router.route('/api/v1/issues').get((req, res) => {
     Issue.find((err, issues) => {
         if (err)
             console.log(err);
@@ -31,7 +31,7 @@ router.route('/issues').get((req, res) => {
     });
 });
 
-router.route('/issues/:id').get((req, res) => {
+router.route('/api/v1/issues/:id').get((req, res) => {
     Issue.findById(req.params.id, (err, issue) => {
         if (err)
             console.log(err);
@@ -40,7 +40,7 @@ router.route('/issues/:id').get((req, res) => {
     });
 });
 
-router.route("/issues/add").post((req, res) => {
+router.route("/api/v1/issues/add").post((req, res) => {
     let issue = new Issue(req.body);
     // save to db
     issue.save()
@@ -52,7 +52,7 @@ router.route("/issues/add").post((req, res) => {
         });
 })
 
-router.route('/issues/update/:id').post((req, res) => {
+router.route('/api/v1/issues/update/:id').post((req, res) => {
     Issue.findById(req.params.id, (err, issue) => {
         if (!issue)
             return runInNewContext(new Error('Could not load document'));
@@ -71,7 +71,7 @@ router.route('/issues/update/:id').post((req, res) => {
     });
 });
 
-router.route('/issues/delete/:id').get((req, res) => {
+router.route('/api/v1/issues/delete/:id').get((req, res) => {
     Issue.findByIdAndRemove({_id: req.params.id}, (err, issue) => {
         if (err)
             res.json(err);
