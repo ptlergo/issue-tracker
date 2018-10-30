@@ -48,21 +48,6 @@ npm run dev
 ### issues routes
 | HTTP VERB | URL | DESCRIPTION | SAMPLE RESPONSE |
 |---|---|---|---|
-|GET|/api/v1/issues|get all issues|[{
-"status": "Closed",
-"_id": "5bd7ea8821cf5fc76ed919fe",
-"title": "issue 0",
-"responsible": "responsible",
-"description": "first test descript",
-"severity": "low"
-},
-{
-"status": "Open",
-"_id": "5bd7ea8821cf5fc76ed919ff",
-"title": "issue 1",
-"responsible": "responsible",
-"description": "first test descript",
-"severity": "low"
-},]|
+|GET|/api/v1/issues|get all issues|[{}]|
 ## Deployment
 app is deployed to Heroku.

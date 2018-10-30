@@ -11,6 +11,16 @@ import { HttpClient } from '@angular/common/http';
 export class IssueService {
   uri = 'http://localhost:4000/api/v1';
 
+  // test config as to pass an obj instead of multiple items as a param
+  defaultIssue = {
+    id: Number,
+    title: String,
+    responsible: String,
+    description: String,
+    severity: String,
+    status: String,
+  };
+
   // instance of HttpClient
   constructor(private http: HttpClient) { }
 
@@ -46,6 +56,14 @@ export class IssueService {
     };
     // post object when hitting the backend route
     return this.http.post(`${this.uri}/issues/update/${id}`, issue);
+  }
+
+  testIssue(issue: object) {
+    // object with values of issue
+    const defaultIssue = this.defaultIssue;
+    const issueObj = {...defaultIssue, ...issue};
+    // post object when hitting the backend route
+    return issueObj;
   }
 
   deleteIssue(id: number) {

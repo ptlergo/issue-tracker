@@ -19,6 +19,7 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.fetchIssues();
+    this.testIssue();
   }
 
   fetchIssues(): void {
@@ -39,4 +40,12 @@ export class ListComponent implements OnInit {
     });
   }
 
+  testIssue(): void {
+    const obj = {
+      id: 21, title: 'string', responsible: 'string', description: 'string', severity: 'string', status: 'string'
+    };
+   const val = this.issueService.testIssue(obj);
+    console.log(val);
+  }
 }
+

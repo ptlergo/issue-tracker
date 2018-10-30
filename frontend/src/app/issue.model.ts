@@ -1,5 +1,5 @@
 export interface Issue {
-    id: String;
+    id: Number;
     title: String;
     responsible: String;
     description: String;
