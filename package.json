@@ -4,12 +4,13 @@
   "engines": {
     "node": "10.9.0",
     "npm": "6.2.x"
-    },
+  },
   "description": "angular app to track issues. Tutorial from [here](https://medium.com/codingthesmartway-com-blog/angular-6-mean-stack-crash-course-part-1-front-end-project-setup-and-routing-89bec8332cea)",
   "main": "./backend/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-watch ./backend/server.js",
+    "start": "babel-node ./backend/server.js",
+    "dev": "babel-watch ./backend/server.js",
     "start-node": "node ./backend/server.js"
   },
   "repository": {
