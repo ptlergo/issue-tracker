@@ -3,7 +3,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 
-import Issue from 'models/issue';
+import Issue from './models/issue';
 import { runInNewContext } from "vm";
 
 const app = express();
@@ -13,7 +13,8 @@ const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect("");
+// connect to db instance and the 'issues' collection
+mongoose.connect("mongodb://localhost:27017/issues");
 
 const connection = mongoose.connection;
 // listen to open of db
