@@ -19,36 +19,36 @@ export class IssueService {
     return this.http.get(`${this.uri}/issues`);
   }
 
-  getIssueById(id) {
+  getIssueById(id: number) {
     return this.http.get(`${this.uri}/issues/${id}`);
   }
 
-  addIssue(title, responsible, description, severity,) {
+  addIssue(title: string, responsible: string, description: string, severity: string) {
     // object with values of issue
     const issue = {
-      title: title,
-      responsible: responsible,
-      description: description,
-      severity: severity,
+      title,
+      responsible,
+      description,
+      severity,
     };
     // post object when hitting the backend route
     return this.http.post(`${this.uri}/issues/add`, issue);
   }
 
-  updateIssue(id, title, responsible, description, severity, status) {
+  updateIssue(id: number, title: string, responsible: string, description: string, severity: string, status: string) {
     // object with values of issue
     const issue = {
-      title: title,
-      responsible: responsible,
-      description: description,
-      severity: severity,
-      status: status,
+      title,
+      responsible,
+      description,
+      severity,
+      status,
     };
     // post object when hitting the backend route
     return this.http.post(`${this.uri}/issues/update/${id}`, issue);
   }
 
-  deletIssue(id) {
+  deleteIssue(id: number) {
     return this.http.get(`${this.uri}/issues/delete/${id}`);
   }
 }
