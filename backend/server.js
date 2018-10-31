@@ -8,13 +8,18 @@ import { runInNewContext } from "vm";
 
 const app = express();
 const router = express.Router();
-
+const PORT = process.env.PORT || 4000;
+const CONNECTION_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/issues";
 // middleware for express app to use
 app.use(cors());
 app.use(bodyParser.json());
 
 // connect to db instance and the 'issues' collection
-mongoose.connect("mongodb://localhost:27017/issues");
+// mongoose.connect("mongodb://localhost:27017/issues");
+// mongodb://<dbuser>:<dbpassword>@ds147073.mlab.com:47073/heroku_7qdrf3jt
+mongoose.connect(CONNECTION_URI, {
+    useMongoClient: true
+});
 
 const connection = mongoose.connection;
 // listen to open of db
@@ -83,4 +88,4 @@ router.route('/api/v1/issues/delete/:id').get((req, res) => {
 app.use("/", router);
 
 app.get('/', (req, res) => res.send("Hello"));
-app.listen(4000, () => console.log('server running on port 4000'));
+app.listen(PORT, () => console.log(`server running on port${PORT}`));
