@@ -1,53 +1,73 @@
 # issue-tracker
-angular app to track issues. Tutorial from [here](https://medium.com/codingthesmartway-com-blog/angular-6-mean-stack-crash-course-part-1-front-end-project-setup-and-routing-89bec8332cea)
+A MEAN Stack application deployed to Heroku, and uses mLab for cloud mongo db.
+App can be viewed from [here](https://my-issue-tracker-app.herokuapp.com/)
 
-# frontend
+# FRONTEND
 
-## install
+## INSTALL
 application relies on angular, install all packages. angular must be installed globally to use 'ng'
 ```
 npm i
 ```
 
-## uses
+## USES
 
-## run
-run application with angular ng
+## RUN
+run application front end with angular ng. Must be in the frontend folder, __./frontend/__
+Default port is '4200'[http://localhost:4200]( http://localhost:4200)
 ```
 ng serve
 ```
-or npm
+or using npm
 ```
 npm run start
 ```
-# components
+
+## COMPONENTS
 - list
 - create
 - edit
 
-
-# backend
-## install
+# BACKEND
+Backend uses node.js, mongoose schema and transpiles with babel.
+## INSTALL
 ```
 npm i
 ```
 
-## uses
+## USES
 - babel for es6 transpiling
 - express server
 - mongoose for mongodb
 - babel-watch
 
-## run
-run the server with babel watching
+## RUN
+run the server with babel watching for development.
+Default port is '4000'[http://localhost:4000]( http://localhost:4000)
+
 ```
 npm run dev
 ```
 
-## endpoints
+## PRODUCTION
+uses babel to build a distribution folder with transpiled files to be deployed to heroku for live.
+```
+npm run start
+```
+
+## ENDPOINTS
+
 ### issues routes
 | HTTP VERB | URL | DESCRIPTION | SAMPLE RESPONSE |
 |---|---|---|---|
 |GET|/api/v1/issues|get all issues|[{}]|
-## Deployment
-app is deployed to Heroku.
+
+## DEPLOYMENT
+App is setup with automatic deployment pipeline through Heroku
+```
+git push origin deploy
+```
+
+## EXTRA
+view app here -> https://my-issue-tracker-app.herokuapp.com/
+angular app to track issues. Tutorial from [here](https://medium.com/codingthesmartway-com-blog/angular-6-mean-stack-crash-course-part-1-front-end-project-setup-and-routing-89bec8332cea).
