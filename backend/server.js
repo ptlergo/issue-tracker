@@ -17,9 +17,7 @@ app.use(bodyParser.json());
 // connect to db instance and the 'issues' collection
 // mongoose.connect("mongodb://localhost:27017/issues");
 // mongodb://<dbuser>:<dbpassword>@ds147073.mlab.com:47073/heroku_7qdrf3jt
-mongoose.connect(CONNECTION_URI, {
-    useMongoClient: true
-});
+mongoose.connect(CONNECTION_URI);
 
 const connection = mongoose.connection;
 // listen to open of db
@@ -87,5 +85,5 @@ router.route('/api/v1/issues/delete/:id').get((req, res) => {
 
 app.use("/", router);
 
-app.get('/', (req, res) => res.send("Hello"));
-app.listen(PORT, () => console.log(`server running on port${PORT}`));
+app.get('/', (req, res) => res.send(`welcome to the issue tracker app by Patrick Tunga-Lergo. Listening on Port: ${PORT}`));
+app.listen(PORT, () => console.log(`server running on port ${PORT}`));
