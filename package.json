@@ -27,13 +27,13 @@
   "homepage": "https://github.com/ptlergo/issue-tracker#readme",
   "devDependencies": {
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "babel-cli": "^6.26.0",
     "babel-watch": "^2.0.7"
   },
   "dependencies": {
     "cors": "^2.8.4",
     "express": "^4.16.4",
     "mongoose": "^5.3.4",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "babel-cli": "^6.26.0"
   }
 }
