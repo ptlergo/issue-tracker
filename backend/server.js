@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
-
+import path from "path";
 import Issue from './models/issue';
 import { runInNewContext } from "vm";
 

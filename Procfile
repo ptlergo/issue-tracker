@@ -1,1 +1,1 @@
-web: babel-watch ./backend/server.js
+web: babel-node ./backend/server.js

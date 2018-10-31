@@ -9,9 +9,10 @@
   "main": "./backend/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-node ./backend/server.js",
+    "build": "babel ./backend/server.js ./backend/models/issue.js -d dist",
+    "babel-node": "babel-node ./backend/server.js",
     "dev": "babel-watch ./backend/server.js",
-    "start-node": "node ./backend/server.js"
+    "start": "npm run build && node ./dist/backend/server.js"
   },
   "repository": {
     "type": "git",
@@ -26,12 +27,12 @@
   "devDependencies": {
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "babel-watch": "^2.0.7"
   },
   "dependencies": {
     "cors": "^2.8.4",
     "express": "^4.16.4",
-    "mongoose": "^5.3.4"
+    "mongoose": "^5.3.4",
+    "babel-preset-env": "^1.7.0"
   }
 }
