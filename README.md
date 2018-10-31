@@ -69,5 +69,4 @@ git push origin deploy
 ```
 
 ## EXTRA
-view app here -> https://my-issue-tracker-app.herokuapp.com/
-angular app to track issues. Tutorial from [here](https://medium.com/codingthesmartway-com-blog/angular-6-mean-stack-crash-course-part-1-front-end-project-setup-and-routing-89bec8332cea).
+This app references [CodingTheSmartWay](https://medium.com/codingthesmartway-com-blog/angular-6-mean-stack-crash-course-part-1-front-end-project-setup-and-routing-89bec8332cea) walkthrough
