@@ -9,7 +9,7 @@
   "main": "./dist/backend/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel ./backend/server.js ./backend/models/issue.js -d dist",
+    "build": "babel ./backend/server.js ./backend/models/issue.js ./backend/routes/index.js -d dist",
     "babel-node": "babel-node ./backend/server.js",
     "dev": "babel-watch ./backend/server.js",
     "start": "npm run build && node ./dist/backend/server.js",
