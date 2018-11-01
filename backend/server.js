@@ -8,7 +8,7 @@ import routes from "./routes/index";
 const app = express();
 const PORT = process.env.PORT || 4000;
 const CONNECTION_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/issues";
-const FRONTEND_PATH = '../frontend/dist/frontend';
+const FRONTEND_PATH = '../dist/frontend';
 // middleware for express app to use
 app.use(cors());
 app.use(bodyParser.json());
