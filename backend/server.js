@@ -26,10 +26,6 @@ const connection = mongoose.connection;
 connection.once('open', () => {
     console.log("mongodb database conenction established successfully");
 });
-
-app.get('*',(req, res) => {
-    res.send(200, FRONTEND_PATH);
-  });
   
 // app.get('/list', (req, res) => res.send(`welcome to the issue tracker app by Patrick Tunga-Lergo. Listening on Port : ${PORT}`));
 app.listen(PORT, () => console.log(`server running on port ${PORT}`));
