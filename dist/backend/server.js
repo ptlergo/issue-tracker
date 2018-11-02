@@ -49,7 +49,7 @@ connection.once('open', function () {
 });
 
 app.get('*', function (req, res) {
-    res.send(_path2.default.join(__dirname, FRONTEND_PATH));
+    res.send(_path2.default.join(__dirname, FRONTEND_PATH + "/index.html"));
 });
 
 // app.get('/list', (req, res) => res.send(`welcome to the issue tracker app by Patrick Tunga-Lergo. Listening on Port : ${PORT}`));

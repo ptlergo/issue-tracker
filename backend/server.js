@@ -28,7 +28,7 @@ connection.once('open', () => {
 });
 
 app.get('*',(req, res) => {
-    res.send(path.join(__dirname, FRONTEND_PATH));
+    res.send(path.join(__dirname, `${FRONTEND_PATH}/index.html`));
   });
   
 // app.get('/list', (req, res) => res.send(`welcome to the issue tracker app by Patrick Tunga-Lergo. Listening on Port : ${PORT}`));
