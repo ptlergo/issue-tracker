@@ -44,14 +44,15 @@ _mongoose2.default.connect(CONNECTION_URI);
 var connection = _mongoose2.default.connection;
 // listen to open of db
 connection.once('open', function () {
-  console.log("mongodb database conenction established successfully");
+    console.log("mongodb database conenction established successfully");
 });
 
-// app.get('*',(req, res) => {
-//     res.render(path.join(__dirname, `${FRONTEND_PATH}/index.html`));
-//   });
+app.get('*', function (req, res) {
+    // res.render(path.join(__dirname, `${FRONTEND_PATH}/index.html`));
+    res.send(200, req.body);
+});
 
 // app.get('/list', (req, res) => res.send(`welcome to the issue tracker app by Patrick Tunga-Lergo. Listening on Port : ${PORT}`));
 app.listen(PORT, function () {
-  return console.log("server running on port " + PORT);
+    return console.log("server running on port " + PORT);
 });

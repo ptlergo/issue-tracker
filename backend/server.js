@@ -26,9 +26,10 @@ connection.once('open', () => {
     console.log("mongodb database conenction established successfully");
 });
 
-// app.get('*',(req, res) => {
-//     res.render(path.join(__dirname, `${FRONTEND_PATH}/index.html`));
-//   });
+app.get('*',(req, res) => {
+    // res.render(path.join(__dirname, `${FRONTEND_PATH}/index.html`));
+    res.send(200, req.body);
+  });
   
 // app.get('/list', (req, res) => res.send(`welcome to the issue tracker app by Patrick Tunga-Lergo. Listening on Port : ${PORT}`));
 app.listen(PORT, () => console.log(`server running on port ${PORT}`));
