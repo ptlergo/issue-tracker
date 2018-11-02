@@ -8,7 +8,7 @@ import routes from "./routes/index";
 const app = express();
 const PORT = process.env.PORT || 4000;
 const CONNECTION_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/issues";
-const FRONTEND_PATH = '../dist/frontend';
+const FRONTEND_PATH = '../frontend';
 // middleware for express app to use
 app.use(cors());
 app.use(bodyParser.json());
@@ -27,8 +27,5 @@ connection.once('open', () => {
     console.log("mongodb database conenction established successfully");
 });
   
-// app.get('*',(req, res) => {
-//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-//   });
-app.get('/', (req, res) => res.send(`welcome to the issue tracker app by Patrick Tunga-Lergo. Listening on Port : ${PORT}`));
+app.get('/list', (req, res) => res.send(`welcome to the issue tracker app by Patrick Tunga-Lergo. Listening on Port : ${PORT}`));
 app.listen(PORT, () => console.log(`server running on port ${PORT}`));

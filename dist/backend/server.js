@@ -29,7 +29,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var app = (0, _express2.default)();
 var PORT = process.env.PORT || 4000;
 var CONNECTION_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/issues";
-var FRONTEND_PATH = '../dist/frontend';
+var FRONTEND_PATH = '../frontend';
 // middleware for express app to use
 app.use((0, _cors2.default)());
 app.use(_bodyParser2.default.json());
@@ -48,10 +48,7 @@ connection.once('open', function () {
   console.log("mongodb database conenction established successfully");
 });
 
-// app.get('*',(req, res) => {
-//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-//   });
-app.get('/', function (req, res) {
+app.get('/list', function (req, res) {
   return res.send("welcome to the issue tracker app by Patrick Tunga-Lergo. Listening on Port : " + PORT);
 });
 app.listen(PORT, function () {
