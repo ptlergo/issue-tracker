@@ -37,6 +37,9 @@ app.use(_bodyParser2.default.json());
 app.use('/', _index2.default);
 // mount the path to base directory
 app.use('/', _express2.default.static(FRONTEND_PATH));
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../frontend/index.html'));
+// });
 
 // mongodb://<dbuser>:<dbpassword>@ds147073.mlab.com:47073/heroku_7qdrf3jt
 // connect to db instance and the 'issues' collection
@@ -45,14 +48,10 @@ _mongoose2.default.connect(CONNECTION_URI);
 var connection = _mongoose2.default.connection;
 // listen to open of db
 connection.once('open', function () {
-    console.log("mongodb database conenction established successfully");
-});
-
-app.get('*', function (req, res) {
-    res.send(200, FRONTEND_PATH);
+  console.log("mongodb database conenction established successfully");
 });
 
 // app.get('/list', (req, res) => res.send(`welcome to the issue tracker app by Patrick Tunga-Lergo. Listening on Port : ${PORT}`));
 app.listen(PORT, function () {
-    return console.log("server running on port " + PORT);
+  return console.log("server running on port " + PORT);
 });

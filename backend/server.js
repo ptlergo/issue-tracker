@@ -16,6 +16,9 @@ app.use(bodyParser.json());
 app.use('/',routes);
 // mount the path to base directory
 app.use('/', express.static(FRONTEND_PATH));
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../frontend/index.html'));
+// });
 
 // mongodb://<dbuser>:<dbpassword>@ds147073.mlab.com:47073/heroku_7qdrf3jt
 // connect to db instance and the 'issues' collection

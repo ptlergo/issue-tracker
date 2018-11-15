@@ -95,13 +95,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _components_list_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/list/list.component */ "./src/app/components/list/list.component.ts");
-/* harmony import */ var _components_create_create_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/create/create.component */ "./src/app/components/create/create.component.ts");
-/* harmony import */ var _components_edit_edit_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/edit/edit.component */ "./src/app/components/edit/edit.component.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _issue_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./issue.service */ "./src/app/issue.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _components_list_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/list/list.component */ "./src/app/components/list/list.component.ts");
+/* harmony import */ var _components_create_create_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/create/create.component */ "./src/app/components/create/create.component.ts");
+/* harmony import */ var _components_edit_edit_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/edit/edit.component */ "./src/app/components/edit/edit.component.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _issue_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./issue.service */ "./src/app/issue.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -119,11 +120,12 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 // config. routes
 var routes = [
-    { path: 'create', component: _components_create_create_component__WEBPACK_IMPORTED_MODULE_7__["CreateComponent"] },
-    { path: 'list', component: _components_list_list_component__WEBPACK_IMPORTED_MODULE_6__["ListComponent"] },
-    { path: 'edit/:id', component: _components_edit_edit_component__WEBPACK_IMPORTED_MODULE_8__["EditComponent"] },
+    { path: 'create', component: _components_create_create_component__WEBPACK_IMPORTED_MODULE_8__["CreateComponent"] },
+    { path: 'list', component: _components_list_list_component__WEBPACK_IMPORTED_MODULE_7__["ListComponent"] },
+    { path: 'edit/:id', component: _components_edit_edit_component__WEBPACK_IMPORTED_MODULE_9__["EditComponent"] },
     { path: '', redirectTo: '/list', pathMatch: 'full' }
 ];
 var AppModule = /** @class */ (function () {
@@ -131,26 +133,27 @@ var AppModule = /** @class */ (function () {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _components_list_list_component__WEBPACK_IMPORTED_MODULE_6__["ListComponent"], _components_create_create_component__WEBPACK_IMPORTED_MODULE_7__["CreateComponent"], _components_edit_edit_component__WEBPACK_IMPORTED_MODULE_8__["EditComponent"]],
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"], _components_list_list_component__WEBPACK_IMPORTED_MODULE_7__["ListComponent"], _components_create_create_component__WEBPACK_IMPORTED_MODULE_8__["CreateComponent"], _components_edit_edit_component__WEBPACK_IMPORTED_MODULE_9__["EditComponent"]],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes),
-                _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatToolbarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatFormFieldModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatInputModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatOptionModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatSelectModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatIconModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatButtonModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatCardModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatTableModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatDividerModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatSnackBarModule"]
+                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatToolbarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatFormFieldModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatInputModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatOptionModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatSelectModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatIconModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatCardModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatTableModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatDividerModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatSnackBarModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"]
             ],
-            providers: [_issue_service__WEBPACK_IMPORTED_MODULE_10__["IssueService"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+            providers: [_issue_service__WEBPACK_IMPORTED_MODULE_11__["IssueService"]],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -178,7 +181,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  create works!\n</p>\n"
+module.exports = "<div>\n  <mat-card>\n    <section class=\"mat-typography\">\n      <h3>create new issue</h3>\n    </section>\n    <mat-divider></mat-divider>\n    <form [formGroup] =\"createForm\" class =\"create-form\">\n      <mat-form-field class=\"field-full-width\">\n        <input type=\"text\" matInput placeholder=\"Issue Title\" formControlName=\"title\" #title>\n      </mat-form-field>\n      <mat-form-field class=\"field-full-width\">\n        <input type=\"text\" matInput placeholder=\"Responsible\" formControlName=\"responsible\" #responsible>\n      </mat-form-field>\n      <mat-form-field class=\"field-full-width\">\n        <textarea matInput placeholder=\"Description\" formControlName=\"description\" #description>\n      </mat-form-field>\n      <mat-form-field class=\"field-full-width\">\n        <mat-select placeholder=\"Severity\" formControlName=\"severity\" #severity>\n          <mat-radio-button value=\"low\">Low</mat-radio-button>\n          <mat-radio-button value=\"Medium\">Medium</mat-radio-button>\n          <mat-radio-button value=\"High\">High</mat-radio-button>\n        </mat-select>\n      </mat-form-field>\n      <mat-divider></mat-divider>\n      <button mat-raised-button color=\"accent\" routerLink=\"/list\">Back</button>\n      <button type=\"submit\" (click)=\"addIssue(title.value, responsible.value, description.value, severity.value)\" [disabled]=\"createForm.pristine || createForm.invalid\" mat-raised-button color=\"primary\">Save</button>\n    </form>\n  </mat-card>\n</div>"
 
 /***/ }),
 
@@ -194,6 +197,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateComponent", function() { return CreateComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _issue_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../issue.service */ "./src/app/issue.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -205,10 +210,28 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
+
 var CreateComponent = /** @class */ (function () {
-    function CreateComponent(issueService) {
+    function CreateComponent(issueService, fb, router) {
         this.issueService = issueService;
+        this.fb = fb;
+        this.router = router;
+        this.createForm = this.fb.group({
+            title: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            responsible: '',
+            description: '',
+            severity: ''
+        });
     }
+    // event handler to add issue
+    CreateComponent.prototype.addIssue = function (title, responsible, description, severity) {
+        var _this = this;
+        this.issueService.addIssue(title, responsible, severity, description)
+            .subscribe(function () {
+            _this.router.navigate(['/list']);
+        });
+    };
     CreateComponent.prototype.ngOnInit = function () {
     };
     CreateComponent = __decorate([
@@ -217,7 +240,7 @@ var CreateComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./create.component.html */ "./src/app/components/create/create.component.html"),
             styles: [__webpack_require__(/*! ./create.component.css */ "./src/app/components/create/create.component.css")]
         }),
-        __metadata("design:paramtypes", [_issue_service__WEBPACK_IMPORTED_MODULE_1__["IssueService"]])
+        __metadata("design:paramtypes", [_issue_service__WEBPACK_IMPORTED_MODULE_1__["IssueService"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], CreateComponent);
     return CreateComponent;
 }());
