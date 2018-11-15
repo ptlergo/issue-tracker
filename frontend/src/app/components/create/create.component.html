@@ -1,3 +1,33 @@
-<p>
-  create works!
-</p>
+<div class="page__create">
+  <mat-card>
+    <section class="mat-typography">
+      <h3>create new issue</h3>
+    </section>
+    <mat-divider></mat-divider>
+    <form [formGroup]="createForm" class="create-form create__form">
+      <mat-form-field class="field-full-width">
+        <input type="text" matInput placeholder="Issue Title" formControlName="title" #title>
+      </mat-form-field>
+      <mat-form-field class="field-full-width">
+        <input type="text" matInput placeholder="Responsible" formControlName="responsible" #responsible>
+      </mat-form-field>
+      <mat-form-field class="field-full-width">
+        <textarea matInput placeholder="Description" formControlName="description" #description></textarea>
+      </mat-form-field>
+      <mat-form-field class="field-full-width">
+        <mat-select placeholder="Severity" formControlName="severity" #severity>
+          <mat-option value="low">Low</mat-option>
+          <mat-option value="Medium">Medium</mat-option>
+          <mat-option value="High">High</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="button-box">
+
+        <button mat-raised-button color="accent" routerLink="/list">Back</button>
+        <button type="submit" (click)="addIssue(title.value, responsible.value, description.value, severity.value)"
+          [disabled]="createForm.pristine || createForm.invalid" mat-raised-button color="primary">Save</button>
+      </div>
+    </form>
+
+  </mat-card>
+</div>
