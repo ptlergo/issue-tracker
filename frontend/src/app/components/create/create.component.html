@@ -1,8 +1,10 @@
-<div class="page__create">
-  <mat-card>
-    <section class="mat-typography">
-      <h3>create new issue</h3>
-    </section>
+<div class="page__create container">
+  <div class="flat-card ">
+    <mat-card-header>
+      <mat-card-title>
+        <h2 class="card-title">create new issue</h2>
+      </mat-card-title>
+        </mat-card-header>
     <mat-divider></mat-divider>
     <form [formGroup]="createForm" class="create-form create__form">
       <mat-form-field class="field-full-width">
@@ -21,13 +23,13 @@
           <mat-option value="High">High</mat-option>
         </mat-select>
       </mat-form-field>
-      <div class="button-box">
+      <div class="actions-box">
 
-        <button mat-raised-button color="accent" routerLink="/list">Back</button>
+        <button mat-flat-button color="accent" routerLink="/list">Back</button>
         <button type="submit" (click)="addIssue(title.value, responsible.value, description.value, severity.value)"
-          [disabled]="createForm.pristine || createForm.invalid" mat-raised-button color="primary">Save</button>
+          [disabled]="createForm.pristine || createForm.invalid" mat-flat-button color="primary">Save</button>
       </div>
     </form>
 
-  </mat-card>
+  </div>
 </div>

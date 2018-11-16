@@ -2,11 +2,3 @@
     display: flex;
     flex-direction: column;
 }
-.button-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.button-box button {
-    width: 25%;
-}
