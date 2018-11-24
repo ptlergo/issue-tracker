@@ -497,7 +497,7 @@ var IssueService = /** @class */ (function () {
     // instance of HttpClient
     function IssueService(http) {
         this.http = http;
-        this.uri = 'http://localhost:4000/api/v1' || false;
+        this.uri = 'https://my-issue-tracker-app.herokuapp.com/api/v1';
         // test config as to pass an obj instead of multiple items as a param
         this.defaultIssue = {
             id: String,
