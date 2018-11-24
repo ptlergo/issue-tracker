@@ -13,7 +13,7 @@ export class IssueService {
 
   // test config as to pass an obj instead of multiple items as a param
   defaultIssue = {
-    id: Number,
+    id: String,
     title: String,
     responsible: String,
     description: String,
@@ -29,7 +29,7 @@ export class IssueService {
     return this.http.get(`${this.uri}/issues`);
   }
 
-  getIssueById(id: number) {
+  getIssueById(id) {
     return this.http.get(`${this.uri}/issues/${id}`);
   }
 
@@ -45,7 +45,7 @@ export class IssueService {
     return this.http.post(`${this.uri}/issues/add`, issue);
   }
 
-  updateIssue(id: number, title: string, responsible: string, description: string, severity: string, status: string) {
+  updateIssue(id, title: string, responsible: string, description: string, severity: string, status: string) {
     // object with values of issue
     const issue = {
       title,
@@ -66,7 +66,7 @@ export class IssueService {
     return issueObj;
   }
 
-  deleteIssue(id: number) {
+  deleteIssue(id: string) {
     return this.http.get(`${this.uri}/issues/delete/${id}`);
   }
 }
