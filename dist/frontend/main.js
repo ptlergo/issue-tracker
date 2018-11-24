@@ -256,7 +256,7 @@ var CreateComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".page__create .edit__form {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n"
 
 /***/ }),
 
@@ -267,7 +267,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  edit works!\n</p>\n"
+module.exports = "<div class=\"page__create container\">\n  <div class=\"flat-card \">\n    <mat-card-header>\n      <mat-card-title>\n        <h2 class=\"card-title\">Update Issue</h2>\n      </mat-card-title>\n        </mat-card-header>\n    <mat-divider></mat-divider>\n    <form [formGroup]=\"updateForm\" class=\"edit-form edit__form\">\n      <mat-form-field class=\"field-full-width\">\n        <input type=\"text\" matInput placeholder=\"Issue Title\" formControlName=\"title\" #title>\n      </mat-form-field>\n      <mat-form-field class=\"field-full-width\">\n        <input type=\"text\" matInput placeholder=\"Responsible\" formControlName=\"responsible\" #responsible>\n      </mat-form-field>\n      <mat-form-field class=\"field-full-width\">\n        <textarea matInput placeholder=\"Description\" formControlName=\"description\" #description></textarea>\n      </mat-form-field>\n      <mat-form-field class=\"field-full-width\">\n        <mat-select placeholder=\"Severity\" formControlName=\"severity\" #severity>\n          <mat-option value=\"low\">Low</mat-option>\n          <mat-option value=\"Medium\">Medium</mat-option>\n          <mat-option value=\"High\">High</mat-option>\n        </mat-select>\n      </mat-form-field>\n      <mat-form-field class=\"field-full-width\">\n        <mat-select placeholder=\"Status\" formControlName=\"status\" #status>\n          <mat-option value=\"Open\">Open</mat-option>\n          <mat-option value=\"In Progress\">In Progress</mat-option>\n          <mat-option value=\"Done\">Done</mat-option>\n        </mat-select>\n      </mat-form-field>\n      <div class=\"actions-box\">\n\n        <button mat-flat-button color=\"accent\" routerLink=\"/list\">Back</button>\n        <button type=\"submit\" (click)=\"updateIssue(title.value, responsible.value, description.value, severity.value, status.value)\"\n          [disabled]=\"updateForm.pristine || updateForm.invalid\" mat-flat-button color=\"primary\">Save</button>\n      </div>\n    </form>\n\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -282,7 +282,10 @@ module.exports = "<p>\n  edit works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditComponent", function() { return EditComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _issue_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../issue.service */ "./src/app/issue.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _issue_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../issue.service */ "./src/app/issue.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -294,11 +297,50 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
+
+
 var EditComponent = /** @class */ (function () {
-    function EditComponent(issueService) {
+    function EditComponent(issueService, router, route, snackbar, fb) {
         this.issueService = issueService;
+        this.router = router;
+        this.route = route;
+        this.snackbar = snackbar;
+        this.fb = fb;
+        this.issue = {};
+        this.createForm();
     }
+    EditComponent.prototype.createForm = function () {
+        this.updateForm = this.fb.group({
+            title: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            responsible: '',
+            description: '',
+            severity: '',
+            status: ''
+        });
+    };
     EditComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            _this.id = params.id;
+            _this.issueService.getIssueById(_this.id).subscribe(function (res) {
+                _this.issue = res;
+                _this.updateForm.get('title').setValue(_this.issue.title);
+                _this.updateForm.get('responsible').setValue(_this.issue.responsible);
+                _this.updateForm.get('description').setValue(_this.issue.description);
+                _this.updateForm.get('severity').setValue(_this.issue.severity);
+                _this.updateForm.get('status').setValue(_this.issue.status);
+            });
+        });
+    };
+    EditComponent.prototype.updateIssue = function (title, responsible, description, severity, status) {
+        var _this = this;
+        this.issueService.updateIssue(this.id, title, responsible, description, severity, status)
+            .subscribe(function () {
+            _this.snackbar.open('issue updated successfully', 'OK', {
+                duration: 3000,
+            });
+        });
     };
     EditComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -306,7 +348,11 @@ var EditComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./edit.component.html */ "./src/app/components/edit/edit.component.html"),
             styles: [__webpack_require__(/*! ./edit.component.css */ "./src/app/components/edit/edit.component.css")]
         }),
-        __metadata("design:paramtypes", [_issue_service__WEBPACK_IMPORTED_MODULE_1__["IssueService"]])
+        __metadata("design:paramtypes", [_issue_service__WEBPACK_IMPORTED_MODULE_4__["IssueService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatSnackBar"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]])
     ], EditComponent);
     return EditComponent;
 }());
@@ -454,7 +500,7 @@ var IssueService = /** @class */ (function () {
         this.uri = 'http://localhost:4000/api/v1';
         // test config as to pass an obj instead of multiple items as a param
         this.defaultIssue = {
-            id: Number,
+            id: String,
             title: String,
             responsible: String,
             description: String,
