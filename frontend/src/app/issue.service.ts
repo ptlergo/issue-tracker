@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class IssueService {
-  uri = 'http://localhost/api/v1';
+  uri = 'http://localhost:4000/api/v1' || 'https://my-issue-tracker-app.herokuapp.com/api/v1';
 
   // test config as to pass an obj instead of multiple items as a param
   defaultIssue = {

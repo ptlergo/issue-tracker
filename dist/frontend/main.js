@@ -497,7 +497,7 @@ var IssueService = /** @class */ (function () {
     // instance of HttpClient
     function IssueService(http) {
         this.http = http;
-        this.uri = 'http://localhost/api/v1';
+        this.uri = 'http://localhost:4000/api/v1' || false;
         // test config as to pass an obj instead of multiple items as a param
         this.defaultIssue = {
             id: String,
