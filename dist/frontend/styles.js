@@ -48,7 +48,7 @@ module.exports = ".mat-badge-content{font-weight:600;font-size:12px;font-family:
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\n\nhtml,\nbody {\n  height: 100%;\n}\n\nbody {\n  margin: 0;\n  font-family: Roboto, \"Helvetica Neue\", sans-serif;\n  background: #eee;\n}\n\n.flat-card {\n    background: #fff;\n    display: flex;\n    flex-direction: column;\n}\n\n.container {\n    max-width: 1200px;\n    margin: 0 auto;\n    padding: 10px;\n}\n\n.actions-box {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    padding: 10px;\n}\n\n.actions-box button {\n    width: 150px;\n    max-width: 300px;\n    overflow: hidden;\n}\n\n.card-title {\n    padding: 10px;\n}\n\n.mat-form-field-flex {\n    padding: 10px;\n}"
+module.exports = "/* You can add global styles to this file, and also import other style files */\n\nhtml,\nbody {\n  height: 100%;\n}\n\nbody {\n  margin: 0;\n  font-family: Roboto, \"Helvetica Neue\", sans-serif;\n  background: #f5f5f5;\n}\n\n.mat-toolbar {\n    background: #eee;\n}\n\n.flat-card {\n    background: #fff;\n    display: flex;\n    flex-direction: column;\n}\n\n.container {\n    max-width: 1200px;\n    margin: 0 auto;\n    padding: 10px;\n}\n\n.actions-box {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    padding: 10px;\n}\n\n.actions-box button {\n    width: 150px;\n    max-width: 300px;\n    overflow: hidden;\n}\n\n.card-title {\n    padding: 10px;\n}\n\n.mat-form-field-flex {\n    padding: 10px;\n}"
 
 /***/ }),
 

@@ -227,7 +227,7 @@ var CreateComponent = /** @class */ (function () {
     // event handler to add issue
     CreateComponent.prototype.addIssue = function (title, responsible, description, severity) {
         var _this = this;
-        this.issueService.addIssue(title, responsible, severity, description)
+        this.issueService.addIssue(title, responsible, description, severity)
             .subscribe(function () {
             _this.router.navigate(['/list']);
         });
