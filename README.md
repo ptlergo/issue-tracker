@@ -10,8 +10,6 @@ application relies on angular, install all packages. angular must be installed g
 npm i
 ```
 
-## USES
-
 ## RUN
 run application front end with angular ng. Must be in the frontend folder, __./frontend/__
 Default port is '4200'[http://localhost:4200]( http://localhost:4200)
@@ -38,7 +36,7 @@ npm i
 ## USES
 - babel for es6 transpiling
 - express server
-- mongoose for mongodb
+- mongoose for mongodb(mlab)
 - babel-watch
 
 ## RUN
@@ -67,6 +65,3 @@ App is setup with automatic deployment pipeline through Heroku
 ```
 git push origin deploy
 ```
-
-## EXTRA
-This app references [CodingTheSmartWay](https://medium.com/codingthesmartway-com-blog/angular-6-mean-stack-crash-course-part-1-front-end-project-setup-and-routing-89bec8332cea) walkthrough
